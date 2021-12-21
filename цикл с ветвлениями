@@ -6,24 +6,31 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>                      
+
 using namespace std;
 
 int main() {
-    float d = 19.1;
-    float v = 0.009;
-    double resist, R;
-    
-    double w[7] = {1, 2, 5, 10, 20, 50, 100};
-    for (int i=0; i<7; ++i) {
-        R = ((w[i] * d) / v); 
+    double resist, R, d = 19.1, v = 0.009; 
+    double speed[7] = { 1, 2, 5, 10, 20, 50, 100 };
+    cout <<'\n';
+   
+    for (int i = 0; i < 7; ++i) {
+        R = ((speed[i] * d) / v); 
         
         if (R > 9.2 * pow(10, 5)) {
             resist = (0.021 / pow(d, (0.3)));
-            cout << "R = " << R << "  resist = " << resist << endl;
         } else {
             resist = pow((1.5 * pow(10, (-6)) / d) + (1 / R), 0.3);
-            cout << "R = " << R << "  resist = " << resist << endl;
-         } 
+        }
+
+    cout.width(66);
+    cout  << "R = " << R << "\t" << " resist = " << resist << '\n';  
+    
+    // "\t" -  управляющий символ табуляции. 
+    //Он выравнивает данные, создавая отступы абзацев и строк (по ширине).
+    
     }
+    
     return 0;
-    }
+}
