@@ -15,8 +15,8 @@ int main() {
     double speed[7] = { 1, 2, 5, 10, 20, 50, 100 };
     cout <<'\n';
    
-    for (int i = 0; i < 7; ++i) {
-        R = ((speed[i] * d) / v); 
+    for (int variable = 0; variable < 7; ++variable) {
+        R = ((speed[variable] * d) / v); 
         
         if (R > 9.2 * pow(10, 5)) {
             resist = (0.021 / pow(d, (0.3)));
