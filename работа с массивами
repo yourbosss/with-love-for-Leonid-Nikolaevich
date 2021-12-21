@@ -1,0 +1,44 @@
+/***********************************
+ * Автор: Копытова К.К.            *
+ * Дата: 21.12.21                  *
+ * название: работа с массивами    *
+ * *********************************/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int both, colms, lines, summ = 0, numberAcount = 0;
+    cout << '\n' << "введите число стобцов и строчек: ";
+    cin >> both;
+    
+    cout << '\n' << "введите элементы матрицы: " << '\n';
+    
+    int c[both][both];
+    
+    for (colms = 0; colms < both; ++colms) {
+        for (lines = 0; lines < both; ++lines) {
+            cin >> c[colms][lines];
+        }
+    }
+    
+    cout << '\n' << "введная матрица : " <<'\n';
+    
+    for (colms = 0; colms < both; ++colms) {
+        for (lines = 0; lines < both; ++lines) {
+           cout << c[colms][lines] << " ";
+       }
+       cout << '\n';
+    }
+    
+    cout <<'\n';
+    
+    for (colms = 0; colms < both; ++colms) {
+        for (lines = 0; lines < colms; ++lines) {
+            summ += c[colms][lines];
+            ++numberAcount; 
+        }
+    }
+    cout << "сумма элементов матрицы : " << summ << '\n' << '\n' << "количество элементов: " << numberAcount;
+
+}
