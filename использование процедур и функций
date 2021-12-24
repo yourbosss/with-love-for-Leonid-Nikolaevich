@@ -1,0 +1,46 @@
+/************************************************
+ * Автор: Копытова К.К.                         *
+ * Дата: 24.12.2021.                            *
+ * Название: Ичпользование процедур и функций   *
+ * **********************************************/
+ 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void arrayFill(double array[], int arraySize) {
+    int indexElement;
+    cout << "введите элементы массива: " << endl;
+    for (indexElement = 0; indexElement < arraySize; ++indexElement) {
+        cin >> array[indexElement];
+  }
+}
+
+double sum(double array[], int arraySize, int b) {
+  int indexElement;
+  double sum = 0;
+  for (indexElement = 0; indexElement < arraySize; ++indexElement) {
+    if (array[indexElement] < b) {
+      sum += array[indexElement];
+    }
+  }
+  return sum;
+}
+
+int main() {
+  int sizeG, sizeV, b;
+  cout << "введите b: ";
+  cin >> b;
+  
+  cout << "введите размер матрицы V: ";
+  cin >> sizeV;
+  double arrayV[sizeV];
+  arrayFill(arrayV, sizeV);
+  cout << "сумма элементов V, меньших b: " << sum(arrayV, sizeV, b) << endl;
+  
+  cout << "введите размер матрицы G: ";
+  cin >> sizeG;
+  double arrayG[sizeG];
+  arrayFill(arrayG, sizeG);
+  cout << "сумма элементов G, меньших b: " << sum(arrayG, sizeG, b) << endl;
+}
